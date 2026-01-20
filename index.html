@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pipe Quotation</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Pipe Quotation</h2>
+
+    <div class="top">
+        <input type="text" id="customerName" placeholder="Customer Name">
+    </div>
+
+    <!-- زر VAT -->
+    <div class="top">
+        <button id="vatBtn" onclick="toggleVAT()">Include VAT</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Diameter (mm)</th>
+                <th>Length (m)</th>
+                <th>Thickness</th>
+                <th>Inch</th>
+                <th>Final Length</th>
+                <th>Price / m</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="rows">
+            <tr>
+                <td><input class="diameter"></td>
+                <td><input class="length"></td>
+                <td><input class="thkInput"></td>
+                <td class="inch"></td>
+                <td class="finalLength"></td>
+                <td class="price"></td>
+                <td class="total"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="buttons">
+        <button onclick="calculate()">Add</button>
+        <button onclick="generatePDF()">Download PDF</button>
+    </div>
+
+    <h3 id="grandTotal">Grand Total: 0 EGP</h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
